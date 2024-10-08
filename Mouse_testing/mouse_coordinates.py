@@ -20,10 +20,11 @@ class MouseCoordinates:
         """Locate the poker client window."""
         windows = gw.getWindowsWithTitle("No Limit")
         for window in windows:
-            if "USD" in window.title:
+            if "EUR" in window.title:
                 self.window = window
                 print(f"Poker client window found. Size: {self.window.width}x{self.window.height}")
                 return
+        print('#1')
         print("Poker client window not found.")
 
 

@@ -27,6 +27,7 @@ def main():
 
 
     api_key                 = os.getenv('OPENAI_API_KEY')
+    print(api_key)
     openai_client           = openai.OpenAI(api_key=api_key)
     poker_window            = locate_poker_window()
     init(autoreset=True)
@@ -66,11 +67,11 @@ def main():
 def locate_poker_window():
     """Locate the poker client window."""
 
-    windows = gw.getWindowsWithTitle("No Limit")
+    windows = gw.getWindowsWithTitle("Sem Limite")
 
     for window in windows:
-
-        if "USD" in window.title or "Money" in window.title:
+        print(window.title)
+        if "EUR" in window.title or "Money" in window.title:
 
             print(f"Poker client window found. Size: {window.width}x{window.height}")
 
@@ -80,8 +81,6 @@ def locate_poker_window():
             resize_poker_window( window, default_width, default_height )
 
             return window
-        
-    print(f"Poker client window NOT Found.")
     return None
 
 
