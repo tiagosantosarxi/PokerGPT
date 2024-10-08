@@ -889,28 +889,30 @@ class ReadPokerTable:
             screenshot_icon = self.capture_screen_area(x, y, icon_width, icon_height)
             screenshot_icon_gray = cv2.cvtColor(np.array(screenshot_icon), cv2.COLOR_BGR2GRAY)
 
-            card_suit = None
+            best_card_suit = None
+            best_card_suit_value = 0
             for card_name, template in self.card_icon_templates.items():
                 result = cv2.matchTemplate(screenshot_icon_gray, template, cv2.TM_CCOEFF_NORMED)
                 _, max_val, _, _ = cv2.minMaxLoc(result)
-                if max_val > 0.9:
-                    card_suit = card_name
-                    break
+                if max_val > best_card_suit_value:
+                    best_card_suit = card_name
+                    best_card_suit_value = max_val
 
             # Capture and process card number/letter using template matching
             screenshot_num = self.capture_screen_area(num_x, num_y, num_width, num_height)
             screenshot_num_gray = cv2.cvtColor(np.array(screenshot_num), cv2.COLOR_BGR2GRAY)
 
-            card_rank = None
+            best_card_rank = None
+            best_card_rank_value = 0
             for rank, template in self.card_number_templates.items():
                 result = cv2.matchTemplate(screenshot_num_gray, template, cv2.TM_CCOEFF_NORMED)
                 _, max_val, _, _ = cv2.minMaxLoc(result)
-                if max_val > 0.9:
-                    card_rank = rank
-                    break
+                if max_val > best_card_rank_value:
+                    best_card_rank = rank
+                    best_card_rank_value = max_val
 
-            if card_rank and card_suit:
-                card = f'{card_rank}{card_suit}'
+            if best_card_rank and best_card_suit:
+                card = f'{best_card_rank}{best_card_suit}'
                 cards_found.append(card)
             else:
                 cards_found.append(None)

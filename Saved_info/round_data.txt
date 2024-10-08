@@ -81,3 +81,54 @@ Table Pot: $153.0
 Player5 Cards: A♦  6♣
 
 
+Player1 is Hero
+River: 9♥  9♥  9♥  9♦  9♥
+Table Pot: $5.0
+River: 4♦  10♠  8♦  Q♠  9♦
+Table Pot: $3.0
+River: 7♥  9♣  2♥  Q♠  9♦
+Table Pot: $5.0
+Hero Cards: 6♦  3♦
+Table Pot: $7.0
+Player4 Cards: 7♦  7♣
+River: 6♦  7♠  Q♠  Q♠  9♦
+Table Pot: $19.0
+Table Pot: $7.0
+River: 7♥  9♣  2♥  Q♠  9♦
+Table Pot: $1.0
+Hero Cards: 9♣  4♠
+Table Pot: $3.0
+Player2 Cards: 2♥  5♥
+River: 5♥  8♦  Q♦  Q♠  9♦
+Table Pot: $8.0
+River: A♦  9♦  Q♥  Q♠  9♦
+Table Pot: $12.0
+Table Pot: $8.0
+River: A♦  9♣  2♥  Q♠  9♦
+Table Pot: $1.0
+River: 7♥  9♣  2♥  Q♠  9♦
+Hero Cards: 9♦  Q♣
+Table Pot: $3.0
+Table Pot: $5.0
+Table Pot: $6.0
+Table Pot: $18.0
+Table Pot: $6.0
+Hero Cards: J♣  A♠
+Table Pot: $3.0
+Table Pot: $13.0
+Table Pot: $20.0
+River: 6♣  2♠  8♠  Q♠  9♦
+River: 6♣  2♠  8♠  9♦  9♦
+River: 6♣  2♠  8♠  9♦  7♠
+Player4 Cards: K♣  A♦
+River: 7♥  9♣  2♥  Q♠  9♦
+Table Pot: $1.0
+Hero Cards: 7♣  3♠
+Table Pot: $3.0
+Table Pot: $5.0
+Table Pot: $6.0
+River: A♦  Q♦  K♣  Q♠  9♦
+River: A♦  Q♦  K♣  K♦  9♦
+Player2 Cards: 9♣  3♥
+
+

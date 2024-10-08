@@ -28,14 +28,14 @@ def test_card(icon_file_path, suit_file_path):
     loaded_icon_gray = cv2.imread(suit_file_path, cv2.IMREAD_GRAYSCALE)
     loaded_num_gray = cv2.imread(icon_file_path, cv2.IMREAD_GRAYSCALE)
 
-    card_suit = None
+    best_card_suit = None
+    best_card_suit_value = 0
     for suit, template in card_icon_templates.items():
         result = cv2.matchTemplate(loaded_icon_gray, template, cv2.TM_CCOEFF_NORMED)
         _, max_val, _, _ = cv2.minMaxLoc(result)
-        if max_val > 0.9:
-            card_suit = suit
-            # print(f"(Icon) for Player {player_number}, Card {index}: {card_suit}")
-            break
+        if max_val > best_card_suit_value:
+            best_card_suit = suit
+            best_card_suit_value = max_val
 
     best_card_rank = None
     best_card_rank_value = 0
@@ -46,9 +46,10 @@ def test_card(icon_file_path, suit_file_path):
             best_card_rank = rank
             best_card_rank_value = max_val
 
-    if card_suit:
-        print('Found suit %s' % card_suit)
+    if best_card_suit:
+        print('Found suit %s' % best_card_suit)
     if best_card_rank:
         print('Found rank %s' % best_card_rank)
+
 
 test_card('../tmp/king.png', '../tmp/diamond.png')
