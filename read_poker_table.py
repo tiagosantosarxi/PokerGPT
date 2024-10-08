@@ -894,7 +894,7 @@ class ReadPokerTable:
             for card_name, template in self.card_icon_templates.items():
                 result = cv2.matchTemplate(screenshot_icon_gray, template, cv2.TM_CCOEFF_NORMED)
                 _, max_val, _, _ = cv2.minMaxLoc(result)
-                if max_val > best_card_suit_value:
+                if max_val > 0.5 and max_val > best_card_suit_value:
                     best_card_suit = card_name
                     best_card_suit_value = max_val
 
@@ -907,7 +907,7 @@ class ReadPokerTable:
             for rank, template in self.card_number_templates.items():
                 result = cv2.matchTemplate(screenshot_num_gray, template, cv2.TM_CCOEFF_NORMED)
                 _, max_val, _, _ = cv2.minMaxLoc(result)
-                if max_val > best_card_rank_value:
+                if max_val > 0.5 and max_val > best_card_rank_value:
                     best_card_rank = rank
                     best_card_rank_value = max_val
 
